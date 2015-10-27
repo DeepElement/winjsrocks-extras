@@ -1,2 +1,2 @@
 var WinJSRocks = require('winjsrocks');
-console.log('WIP');
+WinJSRocks.ioc.registerProvider("storage", require("./provider/indexdb-storage.js"))
