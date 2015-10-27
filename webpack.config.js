@@ -13,7 +13,8 @@ module.exports = {
     fs: "empty"
   },
   externals: {
-    "winjsrocks": "winjsrocks"
+    "winjsrocks": "winjsrocks",
+    "winjs": "winjs"
   },
   module: {
     loaders: [
