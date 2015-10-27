@@ -1,5 +1,5 @@
 node_js:
-  - "4.2"
+- '4.2'
 language: node_js
 before_install:
 - chmod +x -R build
@@ -17,7 +17,7 @@ deploy:
   provider: npm
   email: todd@deepelement.com
   api_key:
-    secure: ku+ifXGbj9wMpCIgDaoFFLiL/VmJ98RAYjYwX3FrEWsIj9EnX4DwHqeHWUf6dmp7yuwPX+JFvNbED7sOotCcdb1L6hM1BEDS7SNbUOs080v7AvUqbPLlCMHue55K34lM++qmPMFgh/2MoGE9t5H/fA3CrddcXrfeTYGwV776GjGkxYrh9kuZmsIay2+aMAAB+654wrQWXTv8YLODMxxZwAlFiGRurquxok2Hc4JqP0v9Szz4ElnYyC5/A6mIWv9Rxxjw7yAdCrOMbUVVW1mmpPx/wlawp/ctlGFRgejhSpX4FHGUSE0dK86Gx6j/jU5/JZIuqVV7YcSsbnt24SLOlo3klOFd2b5CtzRenEFoyg41YOsG0VG0mddyM7dhWV1cuHPPba2z9Mjtv4WvDTGKJZm65WkfTumdDuGSMi68iUlLquWO+jhKarkcuApkc5N+FHzHNH5mWtrMKD1U+5gqz2Fc3xRNIvD9CI3OaeUqPN0AdTjqr+DAGU4/wq+dBtiiCyuvgp1TXKfr+kd250uz3LLtsGx4MG/fvi1lmw4gZ0xuWpuA0z1hZQWd1InNt1t+mRgH85UvAeqqP+tqaIHw317EPoX1epKBjJrRviEwvm5aRncL0/B9zPidS0Y+TBQf1Wgljfbaztk2JlNqHsYCVSjRyBCo54qIrzkgho5blbM=
+    secure: oiUb7Y6139cXtNokKKy558UuqXNOCoSBno495W1HWwg6Whmixmrn3TCmyiRbM0Ps5xpY/7QciPGgge2qwywHOHKKDEbGZ+s/5nIO6WF9D1Y6uicHwiGRVSKuzlgAFgL7mb2EauO4RXkXUOsMu6ONX76DBMC1yJZ/bDjtA9oSZLVBp2+e1dSUdC6Fkzq8Muui5BtYF5/zk6YaXwQ7iZluGkNp1z1b8s8mSFX5Z82wHDE9FQw13/ew/3T+0vn2bSosn61/xxSpvUjJIBWx5g5eCsjdSUtEOVX8qp0qwACF23wmygVy5dQd4TxuIhJgdFsWH0Kpll2zJ5qsF//F75Vrj+yJO0QoK11hJ2IREX3Qx0+YzIcc9p0uXlwPEiKCbP26uBUFbMY9HIkmDHxIo6sXxvWG8CVMAUl8lv/li4aZKlDd7deLyeXDLBcGSf5GhoCqLaWaJ1RPqSPu9D7khBgl+S6GYDb8tnGq8Iw7OI+b/LrfUafocS8pcxCa/ZRmXpg2NsU9iSx0365cZqhnYwdAQOtA5WKxTKpMrLxqyj1hbH9C+qeRoSDziVl9lZ6KM2zgyzCTollIg1nXDQ6WR36ZJ2F8UzDspv4ta+oPTucLia2+cJ4BxfJtScGIGt0xuan8Hci/XU49Ji6mpe8RQ5haMxJyJWG6p7xR98KFgV+6Oeo=
   on:
+    tags: true
     repo: DeepElement/winjsrocks-extras
-    branch: stable
