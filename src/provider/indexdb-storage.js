@@ -38,9 +38,9 @@ var instanceMembers = {
         return callback(err);
 
       that.get(options, function(err, fileDescriptor) {
+        var tx = db.transaction(["files"], "readwrite");
+        var store = tx.objectStore("files");
         if (err && err == "does-not-exist") {
-          var tx = db.transaction(["files"], "readwrite");
-          var store = tx.objectStore("files");
           var fileDescriptor = {};
           fileDescriptor.lastModified = new Date();
           fileDescriptor.data = options.data;
@@ -53,7 +53,15 @@ var instanceMembers = {
             return callback(e.target.error);
           };
         } else {
-          return callback(null, fileDescriptor);
+          fileDescriptor.data = options.data;
+          fileDescriptor.lastModified = new Date();
+          var request = store.put(fileDescriptor);
+          request.onsuccess = function(e) {
+            return callback(null, fileDescriptor);
+          };
+          request.onerror = function(e) {
+            return callback(e.target.error);
+          };
         }
       });
     });
