@@ -1,2 +1,5 @@
-var WinJSRocks = require('winjsrocks');
-WinJSRocks.ioc.registerProvider("localStorage", require("./provider/indexdb-storage.js"))
+import IndexDBProvider from "./storage/indexdb-storage-provider"
+
+export default {
+  IndexDBProvider
+}
