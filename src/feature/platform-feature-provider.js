@@ -5,7 +5,7 @@ export default class extends WinJSRocks.Plugin.Base {
     super(application);
   }
 
-  load(options, callback) {
+  loadComponent(options, callback) {
     return super.load(options, function(err) {
       if (err)
         return callback(err);
