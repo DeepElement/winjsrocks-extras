@@ -1,7 +1,5 @@
 import WinJSRocks from "winjsrocks";
 
-console.log(WinJSRocks);
-
 export default class extends WinJSRocks.Plugin.Base {
   constructor(application) {
     super(application);
