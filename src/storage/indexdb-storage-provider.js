@@ -1,14 +1,13 @@
-var WinJSRocks = require('winjsrocks'),
-  ioc = WinJSRocks.ioc,
-  WinJS = WinJSRocks.winjs,
-  async = require('async');
+import WinJSRocks from "winjsrocks";
 
-var _constructor = function(options) {
-  this._localStorageKey = "winjsrocks-extras";
-};
+console.log(WinJSRocks);
 
-var instanceMembers = {
-  get: function(options, callback) {
+export default class extends WinJSRocks.Plugin.Base {
+  constructor(application) {
+    super(application);
+  }
+
+  get(options, callback) {
     options = options || {};
     options.fileName = options.fileName || "";
     this._getCreateDb({}, function(err, db) {
@@ -29,8 +28,9 @@ var instanceMembers = {
         return callback('does-not-exist');
       };
     });
-  },
-  createOrUpdate: function(options, callback) {
+  }
+
+  createOrUpdate(options, callback) {
     options.data = options.data || {};
     var that = this;
     this._getCreateDb({}, function(err, db) {
@@ -65,8 +65,9 @@ var instanceMembers = {
         }
       });
     });
-  },
-  del: function(options, callback) {
+  }
+
+  del(options, callback) {
     var that = this;
     this._getCreateDb({}, function(err, db) {
       if (err)
@@ -82,8 +83,9 @@ var instanceMembers = {
         return callback(e.target.error);
       };
     });
-  },
-  _getCreateDb: function(data, callback) {
+  }
+
+  _getCreateDb(data, callback) {
     var that = this;
     var openRequest = indexedDB.open(that._localStorageKey, 1);
     openRequest.onupgradeneeded = function(e) {
@@ -104,6 +106,3 @@ var instanceMembers = {
     };
   }
 };
-
-module.exports = WinJS.Class.derive(WinJSRocks.provider.base,
-  _constructor, instanceMembers);
