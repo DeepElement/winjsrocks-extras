@@ -2,11 +2,11 @@ import WinJSRocks from "winjsrocks";
 
 export default class extends WinJSRocks.Plugin.Base {
   constructor(application) {
-    super(application);
+    super(application, "platform-feature", "runtime");
   }
 
-  load(options, callback) {
-    return super.load(options, function(err) {
+  loadComponent(options, callback) {
+    return super.loadComponent(options, function(err) {
       if (err)
         return callback(err);
 
