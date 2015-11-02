@@ -1,12 +1,12 @@
-import IndexDBStorageProvider from "./storage/indexdb-storage-provider"
-import PlatformFeatureProvider from "./feature/platform-feature-provider";
+import IndexDBStoragePlugin from "./storage/indexdb-storage"
+import PlatformFeaturePlugin from "./feature/platform-feature";
 
 var Storage = {
-  IndexDBStorageProvider
+  IndexDBStoragePlugin
 };
 
 var Feature = {
-  PlatformFeatureProvider
+  PlatformFeaturePlugin
 };
 
 export default {

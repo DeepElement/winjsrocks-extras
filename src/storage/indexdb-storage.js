@@ -2,7 +2,11 @@ import WinJSRocks from "winjsrocks";
 
 export default class extends WinJSRocks.Plugin.Base {
   constructor(application) {
-    super(application);
+    super(application, "localStorage", "provider");
+  }
+
+  get localStorageKey(){
+    return this.application.instanceKey;
   }
 
   get(options, callback) {
@@ -85,7 +89,7 @@ export default class extends WinJSRocks.Plugin.Base {
 
   _getCreateDb(data, callback) {
     var that = this;
-    var openRequest = indexedDB.open(that._localStorageKey, 1);
+    var openRequest = indexedDB.open(that.localStorageKey, 1);
     openRequest.onupgradeneeded = function(e) {
       var thisDB = e.target.result;
       var store = null;
