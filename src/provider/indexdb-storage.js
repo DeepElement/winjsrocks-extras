@@ -1,8 +1,8 @@
 import WinJSRocks from "winjsrocks";
 
-export default class extends WinJSRocks.Plugin.Base {
+export default class extends WinJSRocks.Provider.Base {
   constructor(application) {
-    super(application, "localStorage", "provider");
+    super(application);
   }
 
   get localStorageKey(){
