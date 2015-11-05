@@ -3,4 +3,4 @@
 #WinJSRocks-Extras
 
 
-see [http://winjs.rocks](http://winjs.rocks)
+Contains helpful tools for use with the [WinJSRocks](http://winjs.rocks) MVVM library. 
