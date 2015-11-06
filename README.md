@@ -38,3 +38,19 @@ app.builder.registerProvider("localStorage", WinJSRocksExtras.Provider.IndexDBSt
 
 - `Provider.IndexDBStorage` - IndexDB implementation of the WinJSRocks `localStorage` provider
 
+## TL;TR - Example of Everything Enabled!
+
+``` javascript
+var WinJSRocks = require('winjsrocks');
+var WinJSRocksExtras = require('winjsrocks-extras');
+var app = new WinJSRocks.Application();
+app.builder.registerProvider("localStorage", WinJSRocksExtras.Provider.IndexDBStorage);
+app.configure({
+    plugins:[
+      new WinJSRocksExtras.Plugin.PlatformFeature(app)
+    ]
+  },
+  function(err){
+    // App is ready to have 'load' called!
+  });
+```
