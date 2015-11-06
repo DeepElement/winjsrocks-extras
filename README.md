@@ -22,6 +22,8 @@ app.configure({
   });
 ``` 
 
+- `Plugin.PlatformFeature` - Uses the [platform](https://www.npmjs.com/package/platform) package to append device/platform data attributes to the document header`
+
 
 ## Providers
 
