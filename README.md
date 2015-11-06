@@ -4,6 +4,23 @@
 
 Contains helpful tools for use with the [WinJSRocks](http://winjs.rocks) MVVM library. 
 
+## TL;TR - Bootstrap Everything!
+
+``` javascript
+var WinJSRocks = require('winjsrocks');
+var WinJSRocksExtras = require('winjsrocks-extras');
+var app = new WinJSRocks.Application();
+app.builder.registerProvider("localStorage", WinJSRocksExtras.Provider.IndexDBStorage);
+app.configure({
+    plugins:[
+      new WinJSRocksExtras.Plugin.PlatformFeature(app)
+    ]
+  },
+  function(err){
+    // App is ready to have 'load' called!
+  });
+```
+
 ## Plugins 
 Plugins are the recommended way of bolting on features into the WinJSRocks application life-cycle.
 These components are loaded *after* the core framework has loaded and enables access to all of the goodies (Services/Providers) without any load order mishaps.
