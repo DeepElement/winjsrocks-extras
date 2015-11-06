@@ -26,14 +26,15 @@ app.configure({
 
 
 ## Providers
+The WinJSRocks Framework provides the ability to override built in providers, which happens a bit earlier than Plugin registerations. In addition, you can write your own providers and access them via the `WinJSRocks.Application.Instance.Container` api.
 
-
-
-- `Provider.IndexDBStorage` - IndexDB implementation of the WinJSRocks `localStorage` provider
-
+To activate a provider:
 ``` javascript
 var WinJSRocks = require('winjsrocks');
 var WinJSRocksExtras = require('winjsrocks-extras');
 var app = new WinJSRocks.Application();
 app.builder.registerProvider("localStorage", WinJSRocksExtras.Provider.IndexDBStorage);
 ``` 
+
+- `Provider.IndexDBStorage` - IndexDB implementation of the WinJSRocks `localStorage` provider
+
