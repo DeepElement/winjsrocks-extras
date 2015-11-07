@@ -9,7 +9,6 @@ describe('Integration', function() {
       var WinJSRocks = require('winjsrocks');
       var WinJSRocksExtras = require('../src/main');
 
-
       // assert
       for (var pluginKey in WinJSRocksExtras.Plugin) {
         var classDef = WinJSRocksExtras.Plugin[pluginKey];
