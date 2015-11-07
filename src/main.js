@@ -7,5 +7,8 @@ export default {
   },
   Provider: {
     IndexDBStorage: IndexDBStorageProvider
+  },
+  Service: {
+    
   }
 }

@@ -20,6 +20,11 @@ describe('Integration', function() {
         classDef.prototype.should.be.an.instanceof(WinJSRocks.Provider.Base);
       }
 
+      for (var serviceKey in WinJSRocksExtras.Services) {
+        var classDef = WinJSRocksExtras.Provider[serviceKey];
+        classDef.prototype.should.be.an.instanceof(WinJSRocks.Service.Base);
+      }
+
       return done();
     });
   });
