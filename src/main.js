@@ -1,5 +1,5 @@
-import IndexDBStorageProvider from "./provider/indexdb-storage"
-import PlatformFeaturePlugin from "./plugin/platform-feature";
+import IndexDBStorageProvider from "./provider/indexdb-storage/index"
+import PlatformFeaturePlugin from "./plugin/platform-feature/index";
 
 export default {
   Plugin: {
