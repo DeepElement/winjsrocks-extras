@@ -2,7 +2,8 @@ var gulp = require('gulp'),
   mocha = require('gulp-mocha'),
   runSequence = require('gulp-run-sequence'),
   rimraf = require('rimraf'),
-  fs = require('fs-extra');
+  fs = require('fs-extra'),
+  babel = require('babel-core/register');
 
 var gutil = require("gulp-util"),
   webpack = require("webpack"),
@@ -74,26 +75,9 @@ gulp.task("test", function() {
     })
     .pipe(mocha({
       reporter: 'spec',
-      timeout: 60000
-    }));
-});
-
-gulp.task("test:integration", function() {
-  return gulp.src('test/integration/**/*.js', {
-      read: false
-    })
-    .pipe(mocha({
-      reporter: 'spec',
-      timeout: 60000
-    }));
-});
-
-gulp.task("test:unit", function() {
-  return gulp.src('test/unit/**/*.js', {
-      read: false
-    })
-    .pipe(mocha({
-      reporter: 'spec',
+      compilers: {
+        js: babel
+      },
       timeout: 60000
     }));
 });
